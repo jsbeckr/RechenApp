@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="Bitte Rechnen!"
+            android:layout_marginTop="20dp"
+            android:textStyle="italic"
+            android:typeface="serif"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/please_text" />
+        <TextView
+            android:textSize="50dp"
+            local:MvxBind="Text Exercise.Text"
+            android:text="3 + 3 = ?"
+            android:id="@+id/exercise_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/please_text"
+            android:layout_marginTop="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="Ergebnis"
+            android:layout_marginTop="40dp"
+            android:textStyle="italic"
+            android:typeface="serif"
+            android:id="@+id/result_text"
+            android:layout_below="@id/exercise_text"
+            android:layout_centerHorizontal="true" />
+        <ResultEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50dp"
+            local:MvxBind="KeyCommand CheckAnswerCommand; Text Answer"
+            android:layout_marginTop="10dp"
+            android:inputType="phone"
+            android:maxLength="3"
+            android:minEms="2"
+            android:gravity="center"
+            android:ellipsize="start"
+            android:id="@+id/answer_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/result_text" />
+        <Button
+            android:text="Prüfen"
+            android:padding="30dp"
+            android:layout_width="match_parent"
+            android:id="@+id/checkButton"
+            android:textSize="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            local:MvxBind="Click CheckAnswerCommand" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_above="@id/checkButton"
+            android:drawableLeft="@drawable/chart"
+            android:id="@+id/score_button"
+            android:text="Stats"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingRight="20dp"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="15dp"
+            local:MvxBind="Click ShowStatisticsCommand" />
+    </RelativeLayout>
+</LinearLayout>
